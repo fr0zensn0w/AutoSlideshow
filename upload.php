@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors',1);
+error_reporting(E_ALL);
 $dir = "Photos/";
 $file = $dir . basename($_FILES["fileToUpload"]["name"]);
 echo $file;
