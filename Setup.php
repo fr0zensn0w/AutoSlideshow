@@ -16,7 +16,7 @@
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
   $database = mysqli_select_db($connection, DB_DATABASE);
-  $del = "DROP TABLE 'Images";
+  $del = "DROP TABLE Images";
   mysqli_query($connection, $del);
   if(!TableExists("Images", $connection, DB_DATABASE)) 
   { 
