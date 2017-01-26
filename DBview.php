@@ -29,5 +29,6 @@ while($query_data = mysqli_fetch_row($result)) {
        "<td>",$query_data[2], "</td>";
   echo "</tr>";
 }
+?>
 </body>
 </html>
