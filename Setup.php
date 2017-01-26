@@ -6,15 +6,16 @@
   ini_set('display_errors',1);
   error_reporting(E_ALL);
 
-  /* Connect to MySQL and select the database. */
+  
+
+
+  /* Ensure that the Image table exists. */
+  // /* Connect to MySQL and select the database. */
   $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
   $database = mysqli_select_db($connection, DB_DATABASE);
-
-
-  /* Ensure that the Image table exists. */
   // $del = "DROP TABLE 'Images";
   // mysqli_query($connection, $del);
   if(!TableExists("Images", $connection, DB_DATABASE)) 
