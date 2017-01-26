@@ -14,6 +14,9 @@ $file = $dir . basename($_FILES["fileToUpload"]["name"]);
 $OK = 1;
 $filetype = pathinfo($file,PATHINFO_EXTENSION);
 
+echo basename($_FILES['fileToUpload']['name']);
+echo $file;
+
 $query = "INSERT INTO 'Images' ('Image Name', 'Image Path') 
     VALUES (" . basename($_FILES['fileToUpload']['name'] . "," . $file . ")";
 
@@ -24,4 +27,6 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file)) {
 } else {
     echo "Error uploading file";
 }
+
+?>
 
