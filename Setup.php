@@ -15,8 +15,8 @@
 
 
   /* Ensure that the Image table exists. */
-  $del = "DROP TABLE 'Images";
-  mysqli_query($connection, $del);
+  // $del = "DROP TABLE 'Images";
+  // mysqli_query($connection, $del);
   if(!TableExists("Images", $connection, DB_DATABASE)) 
   { 
      $query = "CREATE TABLE `Images` (
