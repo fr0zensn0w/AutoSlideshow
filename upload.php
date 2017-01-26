@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
-  $database = mysqli_select_db($connection, DB_DATABASE);
+$database = mysqli_select_db($connection, DB_DATABASE);
 $dir = "Photos/";
 $file = $dir . basename($_FILES["fileToUpload"]["name"]);
 $OK = 1;
@@ -17,8 +17,7 @@ $filetype = pathinfo($file,PATHINFO_EXTENSION);
 //echo basename($_FILES['fileToUpload']['name']);
 echo $file;
 
-$query = "INSERT INTO 'Images' ('Image Name', 'Image Path') 
-    VALUES (dummy," . $file . ")";
+$query = "INSERT INTO Images (ImageName, ImagePath) VALUES (dummy," . $file . ")";
 
 if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
 

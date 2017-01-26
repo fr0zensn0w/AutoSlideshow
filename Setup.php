@@ -16,14 +16,14 @@
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
   $database = mysqli_select_db($connection, DB_DATABASE);
-  // $del = "DROP TABLE 'Images";
-  // mysqli_query($connection, $del);
+  $del = "DROP TABLE 'Images";
+  mysqli_query($connection, $del);
   if(!TableExists("Images", $connection, DB_DATABASE)) 
   { 
      $query = "CREATE TABLE `Images` (
          `ID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-         `Image Name` varchar(45) DEFAULT NULL,
-         `Image Path` varchar(45)
+         `ImageName` varchar(45) DEFAULT NULL,
+         `ImagePath` varchar(45)
          )";
 
      if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
