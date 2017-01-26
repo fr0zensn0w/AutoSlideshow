@@ -3,6 +3,8 @@
 <body>
 <h1>Sample page</h1>
 <?php
+  ini_set('display_errors',1);
+  error_reporting(E_ALL);
 
   /* Connect to MySQL and select the database. */
   $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
@@ -13,7 +15,6 @@
 
 
   /* Ensure that the Image table exists. */
-  $del = "DROP TABLE 'Images'";
   mysqli_query($connection, $del);
   if(!TableExists("Images", $connection, DB_DATABASE)) 
   { 
