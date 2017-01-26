@@ -17,7 +17,7 @@ $filetype = pathinfo($file,PATHINFO_EXTENSION);
 //echo basename($_FILES['fileToUpload']['name']);
 echo $file;
 
-$query = "INSERT INTO Images (ImageName, ImagePath) VALUES (dummy," . $file . ")";
+$query = "INSERT INTO Images (ImageName, ImagePath) VALUES ('dummy','" . $file . "'')";
 
 if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
 
