@@ -22,9 +22,8 @@
      $query = "CREATE TABLE `Images` (
          `ID` int(11) NOT NULL AUTO_INCREMENT,
          `Image Name` varchar(45) DEFAULT NULL,
-         `Image Path` varchar(45),
-         PRIMARY KEY (`ID`),
-         KEY 'ID' ('ID'))";
+         `Image Path` varchar(45)
+         )";
 
      if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
   }
