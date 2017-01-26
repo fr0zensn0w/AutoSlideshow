@@ -20,7 +20,7 @@
   if(!TableExists("Images", $connection, DB_DATABASE)) 
   { 
      $query = "CREATE TABLE `Images` (
-         `ID` int(11) NOT NULL AUTO_INCREMENT,
+         `ID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
          `Image Name` varchar(45) DEFAULT NULL,
          `Image Path` varchar(45)
          )";
