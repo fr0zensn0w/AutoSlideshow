@@ -14,6 +14,11 @@ $file = $dir . basename($_FILES["fileToUpload"]["name"]);
 $OK = 1;
 $filetype = pathinfo($file,PATHINFO_EXTENSION);
 
+$query = "INSERT INTO 'Images' ('Image Name', 'Image Path') 
+    VALUES (" . basename($_FILES['fileToUpload']['name'] . "," . $file . ")";
+
+if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
+
 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file)) {
     echo "New record created successfully";
 } else {
