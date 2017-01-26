@@ -26,11 +26,11 @@
          PRIMARY KEY (`ID`),
        ) AUTO_INCREMENT=1";
 
-     if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>");
+     if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
   }
 
   /* If input fields are populated, add a row to the Employees table. */
-  $image_path = htmlentities($_POST['Image Path']);
+  //$image_path = htmlentities($_POST['Image Path']);
 ?>
 
 <!-- Input form -->
