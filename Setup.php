@@ -20,10 +20,10 @@
   mysqli_query($connection, $del);
   if(!TableExists("Images", $connection, DB_DATABASE)) 
   { 
-     $query = "CREATE TABLE `Images` (
-         `ID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-         `ImageName` varchar(45) DEFAULT NULL,
-         `ImagePath` varchar(45)
+     $query = "CREATE TABLE Images (
+         ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+         ImageName varchar(45) DEFAULT NULL,
+         ImagePath varchar(45)
          )";
 
      if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
