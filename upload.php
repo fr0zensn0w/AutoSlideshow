@@ -14,11 +14,11 @@ $file = $dir . basename($_FILES["fileToUpload"]["name"]);
 $OK = 1;
 $filetype = pathinfo($file,PATHINFO_EXTENSION);
 
-echo basename($_FILES['fileToUpload']['name']);
+//echo basename($_FILES['fileToUpload']['name']);
 echo $file;
 
 $query = "INSERT INTO 'Images' ('Image Name', 'Image Path') 
-    VALUES (" . basename($_FILES['fileToUpload']['name'] . "," . $file . ")";
+    VALUES (dummy," . $file . ")";
 
 if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
 
