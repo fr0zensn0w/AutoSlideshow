@@ -17,6 +17,12 @@ $database = mysqli_select_db($connection, DB_DATABASE);
     <td>Name</td>
     <td>Path</td>
   </tr>
+</table>
+
+<form action="query.php" method="post">
+  Query: <input type="text" name="query"><br>
+  <input type="submit">
+</form>
 
 <?php
 
