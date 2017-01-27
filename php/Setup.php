@@ -1,48 +1,95 @@
-<?php include "../inc/dbinfo.inc"; ?>
+<?php include "../../inc/dbinfo.inc"; ?>
 <html>
 <body>
-<h1>Setup Database</h1>
+<h1>Sample page</h1>
 <?php
+  ini_set('display_errors',1);
+  error_reporting(E_ALL);
 
-  /* Connect to MySQL and select the database. */
+  
+
+
+  //Boilerplate for connecting to database
   $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
-  if (mysqli_connect_errno()) echo 'Failed to connect to MySQL: ' . mysqli_connect_error();
+  if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
   $database = mysqli_select_db($connection, DB_DATABASE);
+  // Make use of this code if we need to reset the table
+  // $del = "DROP TABLE Images";
+  // mysqli_query($connection, $del);
+  // if(!TableExists("Images", $connection, DB_DATABASE)) 
+  // { 
+  //    $query = "CREATE TABLE Images (
+  //        ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  //        ImageName varchar(45) DEFAULT NULL,
+  //        ImagePath varchar(45)
+  //        )";
 
-  echo 'Creating table if it doesn\'t exist';
+  //    if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
+  // }
+?>
 
-  if(!TableExists("Images", $connection, $dbName)) 
-  { 
-     $query = 'CREATE TABLE Images (
-         image_id int(11) NOT NULL AUTO_INCREMENT,
-         image_name varchar(45) DEFAULT NULL,
-         image blob DEFAULT NULL,
-         PRIMARY KEY (ID),
-       ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1';
+<!-- form for uploading image -->
 
-     if(!mysqli_query($connection, $query)) echo('<p>Error creating table.</p>');
-  }
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
+
+
+
+<!-- Display table data. -->
+<table border="1" cellpadding="2" cellspacing="2">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Image Path</td>
+  </tr>
+
+<?php
+
+$result = mysqli_query($connection, "SELECT * FROM Images"); 
+//this isn't working right now but should show the database on the page
+echo $result;
+while($query_data = mysqli_fetch_row($result)) {
+  echo "Is this thing on"; //just trying to see if we're even entering this loop
+  echo "<tr>";
+  echo "<td>",$query_data[0], "</td>",
+       "<td>",$query_data[1], "</td>",
+       "<td>",$query_data[2], "</td>";
+  echo "</tr>";
 }
 ?>
 
-<!-- displaying table data -->
-<table border="1" cellpadding="2" cellspacing="2">
-    <tr>
-        <td>Image ID</td>
-        <td>Image Name</td>
-        <td>Image Thumbnail</td>
-    </tr>
+</table>
+
+<!-- Clean up. -->
 <?php
 
-$result = mysqli_query($connection, "SELECT * FROM Images");
+  mysqli_free_result($result);
+  mysqli_close($connection);
 
-while($query_data = mysqli_fetch_row($result)) {
-    echo '<tr>';
-    echo '<td>',$query_data[0],'</td>',
-    echo '<td>',$query_data[1],'</td>',
-    echo '<td><img src="data:image/jpeg;base64,'.base64_encode($query_data[2]).'"/>';
-}
+?>
+
 </body>
 </html>
+
+
+<?php
+
+
+//check to see if the table already exists, won't be necessary forever
+function TableExists($tableName, $connection, $dbName) {
+  $t = mysqli_real_escape_string($connection, $tableName);
+  $d = mysqli_real_escape_string($connection, $dbName);
+
+  $checktable = mysqli_query($connection, 
+      "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_NAME = '$t' AND TABLE_SCHEMA = '$d'");
+
+  if(mysqli_num_rows($checktable) > 0) return true;
+
+  return false;
+}
+?>
