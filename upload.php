@@ -19,7 +19,7 @@ $filetype = pathinfo($file,PATHINFO_EXTENSION);
 
 //This query is for inserting just the image name and filepath to that name in our DB. 
 
-$query = "INSERT INTO Images (ImageName, ImagePath) VALUES (\"" . basename($_FILES['fileToUPload']['name']) . "\",\"" . $file . "\")";
+$query = "INSERT INTO Images (ImageName, ImagePath) VALUES (\"" . basename($_FILES['fileToUpload']['name']) . "\",\"" . $file . "\")";
 // echo $query;
 
 //execute query, echo error message if it doesn't work(remove debugging in final version)
