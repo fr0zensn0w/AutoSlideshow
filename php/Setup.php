@@ -59,7 +59,7 @@ while($query_data = mysqli_fetch_row($result)) {
   echo "<td>",$query_data[0], "</td>",
        "<td>",$query_data[1], "</td>",
        "<td>",$query_data[2], "</td>",
-       "<td><img src=" . $query_data[2] . "/>";
+       "<td><img src=\"" . $query_data[2] . "\" />";
   echo "</tr>";
 }
 
