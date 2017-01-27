@@ -16,18 +16,19 @@
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
   $database = mysqli_select_db($connection, DB_DATABASE);
-  $del = "DROP TABLE Images";
-  mysqli_query($connection, $del);
-  if(!TableExists("Images", $connection, DB_DATABASE)) 
-  { 
-     $query = "CREATE TABLE Images (
-         ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-         ImageName varchar(45) DEFAULT NULL,
-         ImagePath varchar(45)
-         )";
+  // Make use of this code if we need to reset the table
+  // $del = "DROP TABLE Images";
+  // mysqli_query($connection, $del);
+  // if(!TableExists("Images", $connection, DB_DATABASE)) 
+  // { 
+  //    $query = "CREATE TABLE Images (
+  //        ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  //        ImageName varchar(45) DEFAULT NULL,
+  //        ImagePath varchar(45)
+  //        )";
 
-     if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
-  }
+  //    if(!mysqli_query($connection, $query)) echo("<p>Error creating table.</p>" . $connection->error);
+  // }
 
   /* If input fields are populated, add a row to the Employees table. */
   //$image_path = htmlentities($_POST['Image Path']);
