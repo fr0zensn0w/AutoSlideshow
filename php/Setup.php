@@ -46,6 +46,7 @@
     <td>ID</td>
     <td>Name</td>
     <td>Image Path</td>
+    <td>Image Preview</td>
   </tr>
 
 <?php
@@ -54,13 +55,14 @@ $result = mysqli_query($connection, "SELECT * FROM Images");
 //this isn't working right now but should show the database on the page
 
 while($query_data = mysqli_fetch_row($result)) {
-  echo "Is this thing on"; //just trying to see if we're even entering this loop
   echo "<tr>";
   echo "<td>",$query_data[0], "</td>",
        "<td>",$query_data[1], "</td>",
-       "<td>",$query_data[2], "</td>";
+       "<td>",$query_data[2], "</td>",
+       "<td><img src=" . $query_data[2] . "/>";
   echo "</tr>";
 }
+
 ?>
 
 </table>
