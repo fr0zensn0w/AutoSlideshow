@@ -11,12 +11,6 @@ $database = mysqli_select_db($connection, DB_DATABASE);
 ?>
 <html>
 <body>
-
-<form action="query.php" method="post">
-  Query: <input type="text" name="query"><br>
-  <input type="submit">
-</form>
-
 <table border="1" cellpadding="2" cellspacing="2">
   <tr>
     <td>ID</td>
