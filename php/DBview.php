@@ -17,7 +17,6 @@ $database = mysqli_select_db($connection, DB_DATABASE);
     <td>Name</td>
     <td>Path</td>
   </tr>
-</table>
 
 
 
@@ -33,5 +32,6 @@ while($query_data = mysqli_fetch_row($result)) {
   echo "</tr>";
 }
 ?>
+</table>
 </body>
 </html>
