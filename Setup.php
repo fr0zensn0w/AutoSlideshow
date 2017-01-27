@@ -9,8 +9,7 @@
   
 
 
-  /* Ensure that the Image table exists. */
-  // /* Connect to MySQL and select the database. */
+  //Boilerplate for connecting to database
   $connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
   if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -34,7 +33,7 @@
   //$image_path = htmlentities($_POST['Image Path']);
 ?>
 
-<!-- Input form -->
+<!-- form for uploading image -->
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
   Select image to upload:
@@ -49,14 +48,16 @@
   <tr>
     <td>ID</td>
     <td>Name</td>
-    <td>Image</td>
+    <td>Image Path</td>
   </tr>
 
 <?php
 
 $result = mysqli_query($connection, "SELECT * FROM Images"); 
-
+//this isn't working right now but should show the database on the page
+echo $result;
 while($query_data = mysqli_fetch_row($result)) {
+  echo "Is this thing on"; //just trying to see if we're even entering this loop
   echo "<tr>";
   echo "<td>",$query_data[0], "</td>",
        "<td>",$query_data[1], "</td>",
@@ -82,7 +83,7 @@ while($query_data = mysqli_fetch_row($result)) {
 <?php
 
 
-/* Check for the existence of a table. */
+//check to see if the table already exists, won't be necessary forever
 function TableExists($tableName, $connection, $dbName) {
   $t = mysqli_real_escape_string($connection, $tableName);
   $d = mysqli_real_escape_string($connection, $dbName);
