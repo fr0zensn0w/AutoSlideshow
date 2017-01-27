@@ -52,7 +52,7 @@
 
 $result = mysqli_query($connection, "SELECT * FROM Images"); 
 //this isn't working right now but should show the database on the page
-echo $result;
+
 while($query_data = mysqli_fetch_row($result)) {
   echo "Is this thing on"; //just trying to see if we're even entering this loop
   echo "<tr>";

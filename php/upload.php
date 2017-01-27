@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) echo "Failed to connect to MySQL: " . mysqli_connect
 $database = mysqli_select_db($connection, DB_DATABASE);
 
 //default directory
-$dir = "Photos/";
+$dir = "../Photos/";
 //setting up filepath to that directory, probably need to check that the name isn't already used, can handle later
 $file = $dir . basename($_FILES["fileToUpload"]["name"]);
 $OK = 1;
