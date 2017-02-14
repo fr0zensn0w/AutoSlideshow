@@ -21,7 +21,8 @@ var fs = require( 'fs' );
 var path = require( 'path' );
 var process = require( "process" );
 
-currentDirectory = "C:/Users/liqui/Desktop/AutoSlideshow-master/AutoSlideshow-master/Photos"
+//currentDirectory = "C:/Users/liqui/Desktop/AutoSlideshow-master/AutoSlideshow-master/Photos"
+currentDirectory = "C:/Users/anthonybonitatibus/Documents/AutoSlideshow/Adam Node/Photos"
 
 var numberOfPhotos = []
 var counter = 0
@@ -90,7 +91,10 @@ function makeCSV() {
     }
 }
 
-
+function sendToDB() {
+    var mysql = require("mysql");
+    var con = mysql.createConnection()
+}
 
 
 
