@@ -427,6 +427,7 @@ document.getElementById("file-input").onchange = function(e) {
         }
         alert(decLong +  " " + decLat);
         alert(EXIF.pretty(this));
+        document.getElementById('data').innerText = JSON.stringify(this, null, 5)
     });
 }
 
@@ -495,6 +496,6 @@ document.getElementById("writeCSV").onclick = function() {
 </script>
 
 
-
+<p id = "data">></p>
 </body>
 </html>
