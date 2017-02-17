@@ -61,9 +61,11 @@
         
     </head>
         
-        <button id="preProcessing">Click for PreProcessing</button><br/>
-        <p style="color: white"><font size="6">YearsPast</font> - This project uses jQuery, d3.js and Cycle2 to create a dynamic slideshow that changes depending on the time of the year and when the photos were taken.<br></br> The use of geolocation and Google Maps have still yet to be implemented. Bugs with portrait photos are still being worked out as well.</p>
+        <!-- <button id="preProcessing">Click for PreProcessing</button><br/>
+        <p style="color: white"><font size="6">YearsPast</font> - This project uses jQuery, d3.js and Cycle2 to create a dynamic slideshow that changes depending on the time of the year and when the photos were taken.<br></br> The use of geolocation and Google Maps have still yet to be implemented. Bugs with portrait photos are still being worked out as well.</p> -->
     <body>
+        <button id="uploadImage">Click to upload image</button></br>
+        <button id="deleteImage">Click to delete image</button></br>
         <script>
             console.log(window.innerWidth);
             console.log(window.innerHeight);
@@ -159,11 +161,11 @@
                 
                 
                 
-                //console.log(sevenDayImageNames);
+                console.log(sevenDayImageNames);
                 
                 // make slideshow on the page with the images from sevenDayImageNames - CYCLE2
-                for (var i=0; i < sevenDayImageNames.length; i++) {
-                    $('.cycle-slideshow').cycle('add', sevenDayImageNames[i]);
+                for (var i=0; i < dates365Array.length; i++) {
+                    $('.cycle-slideshow').cycle('add', dates365Array[i]);
                 }
                 $(this).prop('disabled', true)
                 
@@ -198,6 +200,12 @@
             
             document.getElementById("preProcessing").onclick = function() {
                 window.open("preProcessing.html");
+            }
+            function uploadImage() {
+
+            }
+            function deleteImage() {
+
             }
         </script>
         
