@@ -65,8 +65,10 @@
         <p style="color: white"><font size="6">YearsPast</font> - This project uses jQuery, d3.js and Cycle2 to create a dynamic slideshow that changes depending on the time of the year and when the photos were taken.<br></br> The use of geolocation and Google Maps have still yet to be implemented. Bugs with portrait photos are still being worked out as well.</p> -->
     <body>
         <button id="uploadImage">Click to upload image</button></br>
+        <input id="file-input" type="file" />
         <button id="deleteImage">Click to delete image</button></br>
         <script>
+
             console.log(window.innerWidth);
             console.log(window.innerHeight);
             //for use in parsing the date and time to get it into a format for milliseconds
@@ -78,28 +80,29 @@
             var dates365Array = [];
             var thisWeek = [];
             // using d3 to pull data from download.csv file
-            d3.csv("download.csv", function(data) {
+            d3.json("data.json", function(data) {
                 //console.log(data[0]);
                 this.fullData = data
                 afterProcessing();
             });
             //function needed because we need to async to be finished before we can use the array
             function afterProcessing() {
-                //console.log(fullData);
+                console.log(fullData);
                 var date = new Date();
-                dateMS = date.getTime();
+                dateMS = date.getTime(); //get date in milliseconds
                 //console.log(dateMS);
                 var dayOfYearMS = (dateMS % 31556952000) / 86400000;
                 dayOfYearMS = parseInt(dayOfYearMS, 10);
                 dayOfYearMS++; //increment so we can get more or less the right date
-                console.log(dayOfYearMS); // day of the year that will be outputted
+                console.log("current day of the year",dayOfYearMS); // day of the year that will be outputted
                 
                 //for loop that makes up the array of arrays from 0-365 of the names of the images on those days
+                // so an array of max size 365 and each of the days is an array with the photos of that day
                 for (var i = 0; i < fullData.length; i++) {
-                    if (dates365Array[fullData[i].DayOfYear] == undefined) {
-                        dates365Array[fullData[i].DayOfYear] = ['<img src="Photos/' + fullData[i].Name + '">'];
+                    if (dates365Array[fullData[i].Time.DayOfYear] == undefined) {
+                        dates365Array[fullData[i].Time.DayOfYear] = ['<img src="Photos/' + fullData[i].FileName + '">'];
                     } else {
-                        dates365Array[fullData[i].DayOfYear].push('<img src="Photos/' + fullData[i].Name + '">');
+                        dates365Array[fullData[i].Time.DayOfYear].push('<img src="Photos/' + fullData[i].FileName + '">');
                     }
                     
                 }
@@ -198,9 +201,9 @@
             
             //--------------------------HANDLERS--------------------------
             
-            document.getElementById("preProcessing").onclick = function() {
-                window.open("preProcessing.html");
-            }
+            // document.getElementById("preProcessing").onclick = function() {
+            //     window.open("preProcessing.html");
+            // }
             function uploadImage() {
 
             }
