@@ -1,0 +1,36 @@
+<DOCTYPE! html>
+<html>
+    <head>
+
+        <h1 id="dbTest"></h1>
+
+        <!-- firebase info-->
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCHINhK-Q0M5FIALMGszJCZ-RDv-ptOAXE",
+            authDomain: "epix-88a72.firebaseapp.com",
+            databaseURL: "https://epix-88a72.firebaseio.com",
+            storageBucket: "epix-88a72.appspot.com",
+            messagingSenderId: "925958180304"
+        };
+        firebase.initializeApp(config);
+
+        var dbTest = document.getElementById('dbTest');
+        var dbRef = firebase.database().ref().child('text')
+        dbRef.on('value', snap => dbTest.innerText = snap.val())
+
+        </script>
+    </head>
+
+    <body>
+        
+
+        <script>
+        var heading = document.getElementById('heading1')
+        </script>
+    </body>
+
+
+</html>

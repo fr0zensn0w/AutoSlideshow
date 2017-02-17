@@ -22,6 +22,7 @@ var path = require( 'path' );
 var process = require( "process" );
 
 currentDirectory = "C:/Users/liqui/Desktop/AutoSlideshow-master/AutoSlideshow-master/Photos"
+currentDirectory = "/Users/liquidsn0w/OneDrive\ -\ Georgia\ Institute\ of\ Technology/16th\ Grade/Spring\ 2017/Junior\ Design\ Part\ 2\ -\ CS\ 3312/AutoSlideshow/Adam\ Node/Photos"
 
 var numberOfPhotos = []
 var counter = 0
