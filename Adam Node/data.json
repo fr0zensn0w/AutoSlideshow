@@ -1,5 +1,12 @@
 [
     {
+        "DateTimeOriginal": "2016:10:21 21:29:29",
+        "FileName": "IMG_0042.JPG"
+    },
+    {
+        "FileName": "IMG_0033.JPG"
+    },
+    {
         "DateTimeOriginal": "2016:11:19 18:07:56",
         "FileName": "FullSizeRender 2.jpg",
         "GPSLatitude": [
@@ -31,27 +38,6 @@
         "FileName": "IMG_0065.JPG"
     },
     {
-        "DateTimeOriginal": "2016:08:09 18:29:03",
-        "FileName": "IMG_0051.JPG",
-        "GPSLatitude": [
-            33,
-            55,
-            7.68
-        ],
-        "GPSLongitude": [
-            84,
-            22,
-            37.5
-        ]
-    },
-    {
-        "DateTimeOriginal": "2016:10:21 21:29:29",
-        "FileName": "IMG_0042.JPG"
-    },
-    {
-        "FileName": "IMG_0033.JPG"
-    },
-    {
         "DateTimeOriginal": "2016:10:07 19:21:44",
         "FileName": "IMG_0088.JPG"
     },
@@ -67,6 +53,34 @@
             80,
             6,
             10.32
+        ]
+    },
+    {
+        "DateTimeOriginal": "2016:08:09 18:29:03",
+        "FileName": "IMG_0051.JPG",
+        "GPSLatitude": [
+            33,
+            55,
+            7.68
+        ],
+        "GPSLongitude": [
+            84,
+            22,
+            37.5
+        ]
+    },
+    {
+        "DateTimeOriginal": "2016:09:25 17:22:52",
+        "FileName": "IMG_0091.JPG",
+        "GPSLatitude": [
+            33,
+            50,
+            15.01
+        ],
+        "GPSLongitude": [
+            84,
+            22,
+            50.13
         ]
     },
     {
@@ -87,20 +101,6 @@
         "FileName": "IMG_0096.JPG"
     },
     {
-        "DateTimeOriginal": "2016:09:25 17:22:52",
-        "FileName": "IMG_0091.JPG",
-        "GPSLatitude": [
-            33,
-            50,
-            15.01
-        ],
-        "GPSLongitude": [
-            84,
-            22,
-            50.13
-        ]
-    },
-    {
         "DateTimeOriginal": "2016:07:12 09:57:47",
         "FileName": "IMG_0118.JPG",
         "GPSLatitude": [
@@ -112,20 +112,6 @@
             84,
             23,
             41.44
-        ]
-    },
-    {
-        "DateTimeOriginal": "2016:07:15 16:38:20",
-        "FileName": "IMG_0122.JPG",
-        "GPSLatitude": [
-            33,
-            55,
-            50.16
-        ],
-        "GPSLongitude": [
-            84,
-            21,
-            2.22
         ]
     },
     {
@@ -143,6 +129,20 @@
         ]
     },
     {
+        "DateTimeOriginal": "2016:07:15 16:38:20",
+        "FileName": "IMG_0122.JPG",
+        "GPSLatitude": [
+            33,
+            55,
+            50.16
+        ],
+        "GPSLongitude": [
+            84,
+            21,
+            2.22
+        ]
+    },
+    {
         "DateTimeOriginal": "2016:11:11 20:39:24",
         "FileName": "IMG_0130.JPG",
         "GPSLatitude": [
@@ -154,20 +154,6 @@
             84,
             22,
             43.84
-        ]
-    },
-    {
-        "DateTimeOriginal": "2016:10:02 09:34:52",
-        "FileName": "IMG_0136.JPG",
-        "GPSLatitude": [
-            39,
-            15,
-            42.85
-        ],
-        "GPSLongitude": [
-            84,
-            19,
-            21.67
         ]
     },
     {
@@ -185,6 +171,20 @@
         ]
     },
     {
+        "DateTimeOriginal": "2016:10:02 09:34:52",
+        "FileName": "IMG_0136.JPG",
+        "GPSLatitude": [
+            39,
+            15,
+            42.85
+        ],
+        "GPSLongitude": [
+            84,
+            19,
+            21.67
+        ]
+    },
+    {
         "DateTimeOriginal": "2016:07:15 20:11:56",
         "FileName": "IMG_0146.JPG",
         "GPSLatitude": [
@@ -196,20 +196,6 @@
             84,
             23,
             21.2
-        ]
-    },
-    {
-        "DateTimeOriginal": "2016:10:16 09:52:52",
-        "FileName": "IMG_0153.JPG",
-        "GPSLatitude": [
-            33,
-            50,
-            55.6
-        ],
-        "GPSLongitude": [
-            84,
-            21,
-            48.97
         ]
     },
     {
@@ -227,20 +213,6 @@
         ]
     },
     {
-        "DateTimeOriginal": "2016:07:15 21:09:43",
-        "FileName": "IMG_0158.JPG",
-        "GPSLatitude": [
-            33,
-            44,
-            5.04
-        ],
-        "GPSLongitude": [
-            84,
-            23,
-            20.73
-        ]
-    },
-    {
         "DateTimeOriginal": "2016:10:02 16:02:40",
         "FileName": "IMG_0151-1.JPG",
         "GPSLatitude": [
@@ -252,6 +224,34 @@
             84,
             30,
             22.19
+        ]
+    },
+    {
+        "DateTimeOriginal": "2016:10:16 09:52:52",
+        "FileName": "IMG_0153.JPG",
+        "GPSLatitude": [
+            33,
+            50,
+            55.6
+        ],
+        "GPSLongitude": [
+            84,
+            21,
+            48.97
+        ]
+    },
+    {
+        "DateTimeOriginal": "2016:07:15 21:09:43",
+        "FileName": "IMG_0158.JPG",
+        "GPSLatitude": [
+            33,
+            44,
+            5.04
+        ],
+        "GPSLongitude": [
+            84,
+            23,
+            20.73
         ]
     },
     {

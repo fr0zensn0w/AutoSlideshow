@@ -41,7 +41,8 @@ var process = require( "process" );
 
 //currentDirectory = "C:/Users/liqui/Desktop/AutoSlideshow-master/AutoSlideshow-master/Photos"
 //currentDirectory = "/Users/liquidsn0w/OneDrive\ -\ Georgia\ Institute\ of\ Technology/16th\ Grade/Spring\ 2017/Junior\ Design\ Part\ 2\ -\ CS\ 3312/AutoSlideshow/Adam\ Node/Photos"
-currentDirectory = "/Users/anthonybonitatibus/Documents/AutoSlideshow/Adam Node/Photos"
+// currentDirectory = "/Users/anthonybonitatibus/Documents/AutoSlideshow/Adam Node/Photos"
+currentDirectory = __dirname + "/Photos"
 var numberOfPhotos = []
 var counter = 0
 
@@ -54,6 +55,7 @@ fs.readdir(currentDirectory, function(err, files) {
         // console.log(file)
         // have to go to where the photos are.
         file2 = "Photos/" + file
+        console.log(file2)
         try {
             
             new ExifImage({ image : file2 }, function (error, exifData) {
