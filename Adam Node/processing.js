@@ -90,6 +90,21 @@ fs.readdir(currentDirectory, function(err, files) {
                         //console.log("make CSV file")
                         //console.log(exifData);
                         console.log("done!");
+                    } else {
+                        //////// UNCOMMENT FOR MY RATCHET CSV WRITING ///////////
+                        // //make csv for testing purposes
+                        // // var fields = ['ExposureTime', 'FNumber', 'ExposureProgram', 'ISO', 'ExifVersion','DateTimeOriginal','CreateDate','ComponentsConfiguration','ShutterSpeedValue','ApertureValue','BrightnessValue','ExposureCompensation','MeteringMode','Flash','FocalLength','SubjectArea'];
+                        // var result = json2csv({ data: exifData.gps});
+                        // console.log(result)
+                        // result += ","
+                        // fs.appendFile('data.csv', result, function(err) {
+                        //     if (err) {
+                        //         throw err;
+                        //     } else {
+                        //         console.log('file saved');
+                        //     } 
+                        // });
+
                     }
                 }
             });
@@ -107,6 +122,7 @@ fs.readdir(currentDirectory, function(err, files) {
     })
 })
 
+//npm json2csv module
 var json2csv = require('json2csv');
 
 
